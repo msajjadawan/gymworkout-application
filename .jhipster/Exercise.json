@@ -19,7 +19,8 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20181231184540",
+
+    "changelogDate": "20181231202009",
     "entityTableName": "exercise",
     "dto": "no",
     "pagination": "no",

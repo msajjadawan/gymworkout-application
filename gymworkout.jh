@@ -10,9 +10,21 @@ entity WorkoutPlan {
     dayCount Integer
 }
 
-entity Day{
-exercise Exercise
-repitations Integer
-sets Integer
+entity DayPlan{
+	dayTitle String
+}
+
+entity Workout{
+	repitations Integer
+	sets Integer
+}
+
+relationship OneToOne {
+	Workout{excise} to Exercise
+}
+
+relationship OneToMany {
+  	WorkoutPlan{dayPlans} to DayPlan
+	DayPlan{workouts} to Workout
 }
 
