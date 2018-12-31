@@ -5,3 +5,14 @@ entity Exercise {
     iconLink String
 }
 
+entity WorkoutPlan {
+	planName String
+    dayCount Integer
+}
+
+entity Day{
+exercise Exercise
+repitations Integer
+sets Integer
+}
+
