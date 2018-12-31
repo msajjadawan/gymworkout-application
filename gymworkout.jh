@@ -1,0 +1,7 @@
+entity Exercise {
+	title String
+    description String
+    videoLink String
+    iconLink String
+}
+
