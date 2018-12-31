@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dayPlan">
+            <h2><span>Day Plan</span> {{dayPlan.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Day Title</span></dt>
+                <dd>
+                    <span>{{dayPlan.dayTitle}}</span>
+                </dd>
+                <dt><span>Workout Plan</span></dt>
+                <dd>
+                    <div *ngIf="dayPlan.workoutPlan">
+                        <a [routerLink]="['/workout-plan', dayPlan.workoutPlan?.id, 'view']">{{dayPlan.workoutPlan?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/day-plan', dayPlan.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
