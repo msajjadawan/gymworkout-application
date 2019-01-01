@@ -1,0 +1,30 @@
+{
+    "name": "WorkoutPlan",
+    "fields": [
+        {
+            "fieldName": "planName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dayCount",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "dayPlans",
+            "otherEntityName": "dayPlan",
+            "otherEntityRelationshipName": "workoutPlan"
+        }
+    ],
+    "changelogDate": "20190101215743",
+    "entityTableName": "workout_plan",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

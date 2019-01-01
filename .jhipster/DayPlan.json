@@ -1,0 +1,32 @@
+{
+    "name": "DayPlan",
+    "fields": [
+        {
+            "fieldName": "dayTitle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "workoutPlan",
+            "otherEntityName": "workoutPlan",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "workouts",
+            "otherEntityName": "workout",
+            "otherEntityRelationshipName": "dayPlan"
+        }
+    ],
+    "changelogDate": "20190101215744",
+    "entityTableName": "day_plan",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
