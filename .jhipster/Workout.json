@@ -1,0 +1,38 @@
+{
+    "name": "Workout",
+    "fields": [
+        {
+            "fieldName": "repitations",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sets",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "dayPlan",
+            "otherEntityName": "dayPlan",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "excise",
+            "otherEntityName": "exercise",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "workout"
+        }
+    ],
+    "changelogDate": "20190101215745",
+    "entityTableName": "workout",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

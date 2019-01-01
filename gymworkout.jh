@@ -1,0 +1,30 @@
+entity Exercise {
+	title String
+    description String required maxlength(2048),
+    videoLink String
+    iconLink String
+}
+entity WorkoutPlan {
+	planName String
+    dayCount Integer
+}
+
+entity DayPlan{
+	dayTitle String
+}
+
+entity Workout{
+	repitations Integer
+	sets Integer
+}
+
+relationship OneToOne {
+	Workout{excise} to Exercise
+}
+
+relationship OneToMany {
+  	WorkoutPlan{dayPlans} to DayPlan
+	DayPlan{workouts} to Workout
+
+}
+

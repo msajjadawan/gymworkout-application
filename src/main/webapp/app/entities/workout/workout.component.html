@@ -1,0 +1,68 @@
+<div>
+    <h2 id="page-heading">
+        <span>Workouts</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-workout" [routerLink]="['/workout/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Workout
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="workouts">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Repitations</span></th>
+            <th><span>Sets</span></th>
+            <th><span>Day Plan</span></th>
+            <th><span>Excise</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let workout of workouts ;trackBy: trackId">
+                <td><a [routerLink]="['/workout', workout.id, 'view' ]">{{workout.id}}</a></td>
+                <td>{{workout.repitations}}</td>
+                <td>{{workout.sets}}</td>
+                <td>
+                    <div *ngIf="workout.dayPlan">
+                        <a [routerLink]="['../day-plan', workout.dayPlan?.id, 'view' ]" >{{workout.dayPlan?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="workout.excise">
+                        <a [routerLink]="['../exercise', workout.excise?.id, 'view' ]" >{{workout.excise?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/workout', workout.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/workout', workout.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'workout/'+ workout.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
