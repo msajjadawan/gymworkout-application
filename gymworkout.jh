@@ -1,6 +1,7 @@
 entity Exercise {
 	title String
-    description String
+
+    description String required maxlength(2048),
     videoLink String
     iconLink String
 }

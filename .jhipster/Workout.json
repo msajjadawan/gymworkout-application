@@ -26,7 +26,8 @@
             "otherEntityRelationshipName": "workout"
         }
     ],
-    "changelogDate": "20181231202012",
+    "changelogDate": "20190101215745",
+
     "entityTableName": "workout",
     "dto": "no",
     "pagination": "no",

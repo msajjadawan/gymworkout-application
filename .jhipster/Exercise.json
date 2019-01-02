@@ -7,7 +7,13 @@
         },
         {
             "fieldName": "description",
-            "fieldType": "String"
+
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2048
         },
         {
             "fieldName": "videoLink",
@@ -20,13 +26,17 @@
     ],
     "relationships": [],
 
-    "changelogDate": "20181231202009",
+    "changelogDate": "20190101215742",
     "entityTableName": "exercise",
-    "dto": "no",
+    "dto": "yes",
     "pagination": "no",
-    "service": "no",
+    "service": "yes",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
     "clientRootFolder": "",
     "applications": "*"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f78b77c46ed954490438dc7d28136b7289a5daa4

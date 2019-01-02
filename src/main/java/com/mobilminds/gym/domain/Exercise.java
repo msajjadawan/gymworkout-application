@@ -2,7 +2,7 @@ package com.mobilminds.gym.domain;
 
 
 import javax.persistence.*;
-
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -22,7 +22,10 @@ public class Exercise implements Serializable {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "description")
+
+    @NotNull
+    @Size(max = 2048)
+    @Column(name = "description", length = 2048, nullable = false)
     private String description;
 
     @Column(name = "video_link")

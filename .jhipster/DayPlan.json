@@ -20,7 +20,8 @@
             "otherEntityRelationshipName": "dayPlan"
         }
     ],
-    "changelogDate": "20181231202011",
+
+    "changelogDate": "20190101215744",
     "entityTableName": "day_plan",
     "dto": "no",
     "pagination": "no",

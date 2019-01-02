@@ -16,7 +16,6 @@ import { GymWorkoutWorkoutModule } from './workout/workout.module';
         GymWorkoutWorkoutPlanModule,
         GymWorkoutDayPlanModule,
         GymWorkoutWorkoutModule,
-
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

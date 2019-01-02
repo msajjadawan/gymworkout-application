@@ -148,6 +148,24 @@ public class ExerciseResourceIntTest {
 
     @Test
     @Transactional
+    public void checkDescriptionIsRequired() throws Exception {
+        int databaseSizeBeforeTest = exerciseRepository.findAll().size();
+        // set the field null
+        exercise.setDescription(null);
+
+        // Create the Exercise, which fails.
+
+        restExerciseMockMvc.perform(post("/api/exercises")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(exercise)))
+            .andExpect(status().isBadRequest());
+
+        List<Exercise> exerciseList = exerciseRepository.findAll();
+        assertThat(exerciseList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllExercises() throws Exception {
         // Initialize the database
         exerciseRepository.saveAndFlush(exercise);
@@ -162,7 +180,7 @@ public class ExerciseResourceIntTest {
             .andExpect(jsonPath("$.[*].videoLink").value(hasItem(DEFAULT_VIDEO_LINK.toString())))
             .andExpect(jsonPath("$.[*].iconLink").value(hasItem(DEFAULT_ICON_LINK.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getExercise() throws Exception {
